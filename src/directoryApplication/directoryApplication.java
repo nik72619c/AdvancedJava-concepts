@@ -1,6 +1,8 @@
 package directoryApplication;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 //import java.util.Collections;
 import java.util.Scanner;
 
@@ -31,6 +33,7 @@ class Customer{
 	Customer(int id){
 		this.id = id;
 	}
+	
 	Customer(int id, String name, String city){
 		this.id = id;
 		this.name = name;
@@ -44,6 +47,7 @@ class Customer{
 	}
 	
 	//overriding method equals
+	@Override
 	public boolean equals(Object object) {
 		if(this==object) {
 			return true;
@@ -57,6 +61,8 @@ class Customer{
 		}
 		return false;
 	}
+	
+	
 	
 }
 
@@ -78,6 +84,22 @@ class CustomerOperations{
 		
 		Customer customer= new Customer(id1,name1,city1);
 		return customers.contains(customer)?"found":"not found";
+		
+	}
+
+	public static void sort() {
+		// TODO Auto-generated method stub
+		Collections.sort(customers,new Comparator<Customer>() {
+
+			@Override
+			public int compare(Customer o1, Customer o2) {
+				// TODO Auto-generated method stub
+				return o1.getName().compareTo(o2.getName());
+				
+			}
+			
+			
+		});
 		
 	}
 	
@@ -130,6 +152,10 @@ public class directoryApplication {
 				System.out.println("Enter the City");
 				String city1 = s.next();
 				System.out.println(CustomerOperations.search(id1, name1, city1));
+				break;
+			case 5:
+				CustomerOperations.sort();
+				System.out.println(CustomerOperations.getCustomers());
 				break;
 
 			case 3:
