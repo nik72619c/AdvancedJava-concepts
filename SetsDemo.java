@@ -1,6 +1,7 @@
 package directoryApplication;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 class Emp{
@@ -57,6 +58,16 @@ public class SetsDemo {
 		set.add(new Emp(1,"nikhil"));
 		set.add(new Emp(2,"sam"));
 		System.out.println(set);
+		
+		Iterator<Emp> iterator= set.iterator();
+		while(iterator.hasNext()) {
+			Emp emp= iterator.next();
+			if(!emp.equals("gg")) {
+//		this gives concurrentException->		set.remove(emp);
+				iterator.remove();
+			}
+			
+		}
 
 	}
 
