@@ -1,0 +1,14 @@
+Servlets(let=component, hence server component) are the java programs or api for creating dyamic web pages, running on a java-enabled web-server or application server
+
+Properties of Servlets :
+
+1. Servlets work on the server-side.
+2. Servlets capable of handling complex request obtained from web server.
+
+How servlets work ?
+
+client makes req --> goes to the web server-->passes it to suitable servlet-->sends response to the web server-->back to client
+
+Servlet Conatiner=>It is an integrated set of objects that provides a run-time for java servlet components
+
+
